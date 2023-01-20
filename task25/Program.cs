@@ -1,30 +1,25 @@
-﻿// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-// 452 -> 11
-// 82 -> 10
-// 9012 -> 12
+﻿/* Задача 25: Напишите цикл, который принимает на вход два числа (A и B)
+и возводит число A в натуральную степень B.
+3, 5 -> 243 (3⁵)
+2, 4 -> 16
+Не использовать Math.Pow() и аналоги!
 
+ */
 
-int ReadNumber(string message)
-{
+ int ReadNumber(string message)
+ {
     Console.WriteLine(message);
     return Convert.ToInt32(Console.ReadLine());
-}
+ }
 
-int Digits (int value)
+int Numb1 =ReadNumber($"Введите 1-е число больше нуля :/t");
+int Numb2 =ReadNumber($"Введите 2-е число больше нуля, являющееся степенью 1-го числа :/t");
+
+int NumbEnd=1;
+for (int i = 0; i < Numb2; i++)
 {
-    int result=0;
-    
-    while (value > 0)
-{
-    result += value % 10;
-    value = value/10;
-   
-}
- return result;
+    NumbEnd = NumbEnd*Numb1;
 
 }
 
-
-int number= ReadNumber("Введите число");
-int Finish = Digits(number);
-Console.WriteLine(Finish);
+Console.WriteLine($"Вывод числа:{NumbEnd}");
